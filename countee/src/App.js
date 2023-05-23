@@ -15,12 +15,17 @@ function App() {
       setCount(count - 1);
     }
   }
+  const Reset = (event) =>{
+    setCount(0);
+  }
   return (
     <Container>
-        <h1>{count}</h1>
       <Wrapper className='root'>
+        <h1>{count}</h1>
         <StyledBtn onClick={Plus}>+</StyledBtn>
         <StyledBtn onClick={Minus}>-</StyledBtn>
+        <br></br>
+        <StyledBtn onClick={Reset}>Reset</StyledBtn>
       </Wrapper>
     </Container>
   );
@@ -29,10 +34,15 @@ function App() {
 export default App;
 
 const Container = styled.div`
-  text-align: center;
+  display: flex;
+  justify-content: center;
 `
 
 const Wrapper = styled.div`
+  text-align: center;
+  width: 200px;
+  border-radius: 10px;
+  border: 1px solid #212121;
 `
 
 const StyledBtn = styled.button`
