@@ -1,0 +1,27 @@
+
+.bg{
+    position: fixed;
+    top: 55;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    filter: brightness(50%);
+}
+
+.Container{
+    position: absolute;
+    display: flex;
+    color: white;
+    
+    top: 20%;
+    left: 15%;
+    right: 15%;
+}
+
+.poster{
+    height: 345px;
+}
+
+.textbox{
+    margin-left: 40px;
+}
