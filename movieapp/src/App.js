@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from "./components/navbar/NavBar";
 import Home from "./pages/Home";
 import TopRate from './pages/TopRate';
-import NowPlaing from './pages/NowPlaying';
-import UpComming from './pages/UpComming';
+import Romance from './pages/Romance';
+import Action from './pages/Action';
 import Detail from "./pages/Detail";
+import NotFound from "./pages/NotFound";
 
 
 function App() {
@@ -16,14 +17,12 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/movie/:id' element={<Detail/>} />
         <Route path='/toprate' element={<TopRate/>} />
-        <Route path='/nowplaying' element={<NowPlaing/>} />
-        <Route path='/upcomming' element={<UpComming/>} />
+        <Route path='/Romance' element={<Romance/>} />
+        <Route path='/Action' element={<Action/>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   )
 }
 
 export default App;
-
-// movie id로 페이지 링크 따오기..?
-// <Route path='/movie/:id' element={<Detail/>} />

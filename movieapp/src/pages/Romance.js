@@ -4,12 +4,12 @@ import PageCard from "../components/PageCard";
 import Loading from "../components/Loading";
 import styled from "styled-components";
 
-function TopRate(){
+function Romance(){
     const [loading, setLoading]=useState(true);
     const [movies, setMovies]=useState([]);
     const getMovies=async()=>{
         const json=await(
-        await fetch(`${Api}?minimum_rating=9&sort_by=rating`) 
+        await fetch(`${Api}?genre=Romance&sort_by=rating`) 
         ).json();
         setMovies(json.data.movies)
         setLoading(false);
@@ -21,7 +21,7 @@ function TopRate(){
 
     return (
         <div>
-            <Genre>Top Rate</Genre>
+            <Genre>Romance</Genre>
             {loading ? (<Loading/>) : (
                 <Movies>
                     {movies.map(movie=>
@@ -41,7 +41,7 @@ function TopRate(){
     )
 }
 
-export default TopRate;
+export default Romance;
 
 const Genre=styled.div`
     text-align: center;

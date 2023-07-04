@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
-function Loading(){
+function NotFound(){
     return(
-        <Loader>
-            <h1>Loading...</h1>
-        </Loader>
+        <Err>
+            <h1>Not Found..</h1>
+        </Err>
     )
 }
 
-export default Loading;
+export default NotFound;
 
-const Loader = styled.div`
+const Err = styled.div`
     display:flex;
     /*화면 정중앙 정렬*/
     justify-content: center;

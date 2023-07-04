@@ -1,18 +1,21 @@
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
 
-function MainSwiperCard({id, coverImg, title}){
+function HomeSwiperCard({id, coverImg, title, year, rating, runtime }){
     return(
-        <div className="main-card">
+        <div className="home-card">
             <Link to={`movie/${id}`}>
-                <img className="main-poster" src={coverImg} alt={title} />
+                <img className="home-poster" src={coverImg} alt={title} />
                 <h3>{title}</h3>
+                <h4>{year}</h4>
+                <h4>Rating: {rating}</h4>
+                <h4>{runtime ? `Runtime: ${runtime}` : null}</h4>
             </Link>
         </div>
     )
 }
 
-MainSwiperCard.propTypes={
+HomeSwiperCard.propTypes={
     id: PropTypes.number.isRequired,
     coverImg: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -20,4 +23,4 @@ MainSwiperCard.propTypes={
     genres: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default MainSwiperCard;
+export default HomeSwiperCard;

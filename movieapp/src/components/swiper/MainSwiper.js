@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import {Api} from "../../Api";
 import styled from "styled-components";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -20,7 +21,7 @@ function MainSwiper() {
     const [movies, setMovies]=useState([]);
     const getMovies=async()=>{
         const json=await(
-        await fetch(`https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year`)
+        await fetch(`${Api}?minimum_rating=9&sort_by=year&limit=5`)
         ).json();
         setMovies(json.data.movies)
         setLoading(false);
@@ -47,7 +48,7 @@ function MainSwiper() {
             navigation={true}
             mousewheel={false}
             modules={[EffectCoverflow, Pagination, Navigation, Mousewheel]}
-            className="mySwiper"
+            className="mainSwiper"
         >
             <div>
                 {movies.map(movie=> 
@@ -57,8 +58,6 @@ function MainSwiper() {
                             id={movie.id} 
                             coverImg={movie.medium_cover_image} 
                             title={movie.title} 
-                            summary={movie.summary} 
-                            genres={movie.genres} 
                         />
                     </SwiperSlide>
                 )}

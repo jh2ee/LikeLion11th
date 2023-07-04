@@ -1,16 +1,21 @@
-
 import {Link} from "react-router-dom";
+import "./NavBar.css";
+import menubar from "./menubar.jpg";
 
 function NavItems(){
     return(
-        <div>
-            <div>J-Flix</div>
+        <div className="NavBar">
+            <div className="Logo"><Link className="Logotext" to={'/'} >J-Flix</Link></div>
+
+            <div className="NavMenus">
+                <Link className="MenuList" to={'/'} >Home</Link>
+                <Link className="MenuList" to={'/toprate'} >Top Rate</Link>
+                <Link className="MenuList" to={'/Romance'} >Romance</Link>
+                <Link className="MenuList" to={'/Action'} >Action</Link>
+            </div>
 
             <div>
-                <Link to={'/'} >Home</Link>
-                <Link to={'/toprate'} >TopRate</Link>
-                <Link to={'/nowplaying'} >Now Playing</Link>
-                <Link to={'/upcomming'} >Up Comming</Link>
+                <img className="MenuBar" src={menubar} />
             </div>
         </div>
     )

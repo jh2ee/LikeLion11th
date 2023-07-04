@@ -8,7 +8,7 @@ function MovieDetail({id, coverImg, bgImg, title, year, genres, rating, runtime,
             <img className="bg" src={bgImg} />
 
             <div className="Container" >
-              <img className="poster" src={coverImg} alt={title} />
+              <img className="detail-poster" src={coverImg} alt={title} />
               <div className="textbox" >
                 <h2>{title}</h2>
                 <h4>{year}  {genres.join(", ")}</h4>
