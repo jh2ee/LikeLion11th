@@ -1,8 +1,14 @@
 .NavBar{
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: rgb(33,31,32);
+    box-shadow: 5px black;
+    z-index: 20;
 }
 
 .Logo{
