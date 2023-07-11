@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import "./Home.css";
 
 import MainSwiper from "../components/swiper/MainSwiper";
 import HomeSwiper from "../components/swiper/HomeSwiper"
@@ -14,8 +14,8 @@ function Home(){
             <div>
                 <MainSwiper/>
                 {Group_key_arr.map(group=>
-                    <div>
-                        <Link to={`/${group}`}><Title>{group}</Title></Link>
+                    <div className="homeswiper-container">
+                        <div className="homeswiper-link"><Link className="homeswiper-title" to={`/${group}`}>{group}</Link></div>
                         <HomeSwiper API={`${Api}?limit=10&${Group_obj[group]}&sort_by=rating`} />
                     </div>
                 )}
@@ -25,12 +25,3 @@ function Home(){
 }
 
 export default Home;
-
-const Title=styled.div`
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    font-size: 46px;
-    margin-top: 150px;
-    
-`

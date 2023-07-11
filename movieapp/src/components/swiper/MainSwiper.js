@@ -48,7 +48,7 @@ function MainSwiper() {
             navigation={true}
             mousewheel={false}
             modules={[EffectCoverflow, Pagination, Navigation, Mousewheel]}
-            className="mainSwiper"
+            className="main-swiper"
         >
             <div>
                 {movies.map(movie=> 
